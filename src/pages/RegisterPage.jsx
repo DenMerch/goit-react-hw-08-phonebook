@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux"
-import { Link } from "react-router-dom";
-import { logIn, register } from "redux/auth/operation";
-
+import { register } from "redux/auth/operation";
+import css from './Pages.module.css'
 
 export const RegisterPage = () => {
     const dispatch = useDispatch();
@@ -36,52 +35,55 @@ export const RegisterPage = () => {
         dispatch(register(newUser))
     }
     return (
-        <div>
-            <h1>SignUp</h1>
+        <div className={css.wrap}>
+            <h2>SignUp</h2>
             <form onSubmit={handleSubmit} autoComplete="off">
-
-                <label htmlFor='registerName' >
-                    Name
-                </label>
-                <input
-                    onChange={handleChange}
-                    name='name'
-                    type='text'
-                    id='registerName'
-                    value={name}
-                />
-
-                <label htmlFor='registerEmail'>
-                    Email address
-                </label>
-                <input
-                    onChange={handleChange}
-                    name='email'
-                    type='email'
-                    id='registerEmail'
-                    aria-describedby='emailHelp'
-                    value={email}
-                />
-
-                <label
-                    htmlFor='registerPassword'
-                >
-                    Password
-                </label>
-                <input
-                    onChange={handleChange}
-                    name='password'
-                    type='password'
-                    id='registerPassword'
-                    value={password}
-                />
-                <button type='submit'>
+                <div className={css.wrap}>
+                    <label htmlFor='registerName' >
+                        Name
+                    </label>
+                    <input
+                        className={css.input}
+                        onChange={handleChange}
+                        name='name'
+                        type='text'
+                        id='registerName'
+                        value={name}
+                    />
+                </div>
+                <div className={css.wrap}>
+                    <label htmlFor='registerEmail'>
+                        Email address
+                    </label>
+                    <input
+                        className={css.input}
+                        onChange={handleChange}
+                        name='email'
+                        type='email'
+                        id='registerEmail'
+                        aria-describedby='emailHelp'
+                        value={email}
+                    />
+                </div>
+                <div className={css.wrap}>
+                    <label
+                        htmlFor='registerPassword'
+                    >
+                        Password
+                    </label>
+                    <input
+                        className={css.input}
+                        onChange={handleChange}
+                        name='password'
+                        type='password'
+                        id='registerPassword'
+                        value={password}
+                    />
+                </div>
+                <button type='submit' className={css.btn}>
                     Submit
                 </button>
             </form>
-            <div>
-                <Link to='/login'>Login</Link>
-            </div>
         </div>
     )
 }

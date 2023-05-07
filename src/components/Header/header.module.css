@@ -1,3 +1,8 @@
+.link:hover,
+.link:focus {
+    color: blue
+}
+
 .btn {
     border-radius: 20px;
     padding: 8px 13px;
@@ -17,17 +22,4 @@
 .btn:hover {
     background: white;
 
-}
-
-.item {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    max-width: 550px;
-    justify-content: space-between;
-    border-bottom: 1px solid #4440F7;
-}
-
-.list {
-    margin: 10px auto;
 }

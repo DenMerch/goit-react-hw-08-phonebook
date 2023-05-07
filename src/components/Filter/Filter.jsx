@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { filterContacts } from "redux/filterSlice";
 import { filterSelector } from "redux/selectors";
+import css from './Filter.module.css'
 
 export const Filter = () => {
     const dispatch = useDispatch();
@@ -11,8 +12,8 @@ export const Filter = () => {
     };
 
     return (
-        <>
-            <p>Find contacts by name</p>
+        <div className={css.wrap}>
+            <h3>Find contacts by name</h3>
             <label htmlFor="filter" className="form-label">Name</label>
             <input
                 onChange={handleInput}
@@ -24,6 +25,6 @@ export const Filter = () => {
                 title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                 required
             />
-        </>
+        </div>
     )
 }

@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
-
 import { Layout } from './Layout/Layout';
-import { Suspense, useEffect } from 'react';
+import { Suspense } from 'react';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { ContactForm } from './Forms/FormsFone';
@@ -9,26 +8,20 @@ import { Filter } from './Filter/Filter';
 import { Contacts } from './Contacts/Contacts';
 import { LoginPage } from 'pages/LoginPage';
 import { RegisterPage } from 'pages/RegisterPage';
-import { Header } from './Header/Header';
-import { useDispatch } from 'react-redux';
-import { getUser } from 'redux/auth/operation';
 import { HomePage } from 'pages/HomePage';
 
 export const App = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getUser())
-  }, [dispatch])
+
 
   return (
     <div
       style={{
-        flexDirection: "column",
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
+        marginTop: 20,
+        marginLeft: "auto",
+        marginRight: 'auto',
+        fontSize: 20,
+        color: '#010101',
+        maxWidth: 1200,
       }}
     >
       <Routes>

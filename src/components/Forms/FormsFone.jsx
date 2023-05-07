@@ -38,6 +38,7 @@ export const ContactForm = () => {
             <div className={css.mb} >
                 <label htmlFor="name" className="form-label">Name</label>
                 <input
+                    className={css.input}
                     onChange={handleInput}
                     value={name}
                     id="name"
@@ -49,6 +50,7 @@ export const ContactForm = () => {
                 />
                 <label htmlFor="number" className="form-label">Phone number</label>
                 <input
+                    className={css.input}
                     onChange={handleInput}
                     value={number}
                     id="number"
@@ -59,7 +61,7 @@ export const ContactForm = () => {
                     required
                 />
             </div>
-            <button type="submit" className="btn btn-primary"  >Submit</button>
+            <button type="submit" className={css.btn}  >Submit</button>
         </form >
     )
 }

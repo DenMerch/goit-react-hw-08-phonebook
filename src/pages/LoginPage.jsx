@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux"
-import { Link } from "react-router-dom";
 import { logIn } from "redux/auth/operation";
-import { loginThunk } from "service/thunk";
+import css from './Pages.module.css'
+
 export const LoginPage = () => {
 
     const dispatch = useDispatch();
@@ -22,13 +22,15 @@ export const LoginPage = () => {
         setPassword('')
     }
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
+        <div className={css.wrap}>
+            <h2>Please login</h2>
+            <form onSubmit={handleSubmit} >
+                <div className={css.wrap}>
                     <label htmlFor='loginEmail'>
                         Email address
                     </label>
                     <input
+                        className={css.input}
                         name='email'
                         type='email'
                         id="loginEmail"
@@ -36,23 +38,21 @@ export const LoginPage = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <div>
+                <div className={css.wrap}>
                     <label
                         htmlFor='loginPassword'
                     >
                         Password
                     </label>
                     <input
+                        className={css.input}
                         name='password'
                         type='password'
                         onChange={handleChange}
                         id="loginPassword"
                     />
                 </div>
-                <div>
-                    <Link to='/signUp'>Sign Up</Link>
-                </div>
-                <button type='submit'>
+                <button type='submit' className={css.btn}>
                     Submit
                 </button>
             </form>
