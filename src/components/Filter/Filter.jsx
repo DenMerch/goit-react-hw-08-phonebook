@@ -13,9 +13,10 @@ export const Filter = () => {
 
     return (
         <div className={css.wrap}>
-            <h3>Find contacts by name</h3>
+            <h2>Find contacts by name</h2>
             <label htmlFor="filter" className="form-label">Name</label>
             <input
+                className={css.input}
                 onChange={handleInput}
                 value={filter}
                 id="filter"
