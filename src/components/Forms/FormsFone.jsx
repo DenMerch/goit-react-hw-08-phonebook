@@ -2,8 +2,9 @@ import { useState } from "react";
 import css from './Forms.module.css'
 import { useDispatch, useSelector } from "react-redux";
 import Notiflix from "notiflix";
-import { addContact } from "service/apiContacts";
+import { addContact } from "redux/apiContacts";
 import { contactsSelector } from "redux/selectors";
+import { nanoid } from "@reduxjs/toolkit";
 
 export const ContactForm = () => {
     const contacts = useSelector(contactsSelector)
@@ -19,7 +20,7 @@ export const ContactForm = () => {
         if (isNamePresent) {
             return showMessage(name)
         } else {
-            dispatch(addContact({ name, phone: number }))
+            dispatch(addContact({ id: nanoid(), name, number: number }))
         }
     };
     const showMessage = (name) => {

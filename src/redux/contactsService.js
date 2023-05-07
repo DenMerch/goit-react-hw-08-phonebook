@@ -5,13 +5,12 @@ const handlePending = (state) => {
 
 const handleFulfilled = (state, { payload }) => {
     state.isLoading = false
-
     state.items = payload
     state.error = ''
 }
 const handleUpdate = (state, { payload }) => {
     state.isLoading = false
-    state.items.push(payload)
+    state.items.unshift(payload)
     state.error = ''
 }
 const handleDelete = (state, { payload }) => {
@@ -20,8 +19,8 @@ const handleDelete = (state, { payload }) => {
     state.error = ''
 }
 
-const handleRejected = (state, action) => {
+const handleRejected = (state, { payload }) => {
     state.isLoading = false
-    state.error = action.payload
+    state.error = payload
 }
 export { handleRejected, handleDelete, handleUpdate, handleFulfilled, handlePending }
