@@ -1,11 +1,10 @@
 import { useSelector } from 'react-redux'
-import { Navigate, useLocation } from 'react-router-dom'
+import { Navigate, } from 'react-router-dom'
 
-export const PrivateRoute = ({ children }) => {
+export const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
     const isAuth = useSelector((state) => state.auth.token)
-    const location = useLocation()
-    return isAuth ? children : <Navigate to='/login' state={location} />
+    const isRefreshing = state => state.auth.isRefreshing;
+    const shouldRedirect = !isAuth && !isRefreshing;
+
+    return shouldRedirect ? <Navigate to={redirectTo} /> : Component;
 }
-
-
-
