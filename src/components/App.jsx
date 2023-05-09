@@ -10,13 +10,16 @@ import { PrivatContacts } from './PrivateContacts/PrivateContacts';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getUser } from 'redux/auth/operation';
+import { useAuth } from 'redux/hook/useAuth';
 
 export const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUser());
   }, [dispatch]);
-  return (
+  const { isRefreshing } = useAuth();
+  return isRefreshing ? (
+    <b>Refreshing...</b>) : (
     <div
       style={{
         marginTop: 20,
