@@ -2,7 +2,7 @@ import { useState } from "react";
 import css from './Forms.module.css'
 import { useDispatch, useSelector } from "react-redux";
 import Notiflix from "notiflix";
-import { addContact } from "redux/apiContacts";
+import { addContact } from "redux/contacts/apiContacts";
 import { contactsSelector } from "redux/selectors";
 import { nanoid } from "@reduxjs/toolkit";
 

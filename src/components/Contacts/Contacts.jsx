@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './Contacts.module.css'
 import { useEffect } from 'react';
-import { deleteContact, fetchContacts } from 'redux/apiContacts';
+import { deleteContact, fetchContacts } from 'redux/contacts/apiContacts';
 import { contactsSelector, filterSelector } from 'redux/selectors';
 import { getIsLoggedIn } from 'redux/auth/authSelectors';
 

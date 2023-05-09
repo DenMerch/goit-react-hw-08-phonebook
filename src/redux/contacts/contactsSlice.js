@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { contactsInitialState } from "./initialState";
-import { fetchContacts, addContact, deleteContact } from "redux/apiContacts";
+import { fetchContacts, addContact, deleteContact } from "./apiContacts";
 import { handleDelete, handleFulfilled, handlePending, handleRejected, handleUpdate } from "./contactsService";
 
 

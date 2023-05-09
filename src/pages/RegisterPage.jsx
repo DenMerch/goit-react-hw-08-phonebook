@@ -31,7 +31,6 @@ export const RegisterPage = () => {
         setName('');
         setEmail('');
         setPassword('');
-        console.log("submit");
         dispatch(register(newUser))
     }
     return (

@@ -3,5 +3,3 @@ export const contactsInitialState = {
     isLoading: false,
     error: null
 };
-
-export const filterInitial = ''
