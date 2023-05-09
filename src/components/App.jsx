@@ -7,8 +7,15 @@ import { LoginPage } from 'pages/LoginPage';
 import { RegisterPage } from 'pages/RegisterPage';
 import { HomePage } from 'pages/HomePage';
 import { PrivatContacts } from './PrivateContacts/PrivateContacts';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getUser } from 'redux/auth/operation';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
   return (
     <div
       style={{

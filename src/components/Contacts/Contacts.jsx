@@ -3,18 +3,16 @@ import css from './Contacts.module.css'
 import { useEffect } from 'react';
 import { deleteContact, fetchContacts } from 'redux/contacts/apiContacts';
 import { contactsSelector, filterSelector } from 'redux/selectors';
-import { getIsLoggedIn } from 'redux/auth/authSelectors';
 
 export const Contacts = () => {
     const contacts = useSelector(contactsSelector)
     const filter = useSelector(filterSelector)
-    const isLogged = useSelector(getIsLoggedIn);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (!isLogged) return
+
         dispatch(fetchContacts())
-    }, [dispatch, isLogged])
+    }, [dispatch])
     const foundedName = (filter, contacts) => {
         if (filter) {
             return contacts.filter(contact => contact.name.toLowerCase().replace(" ", '')
